@@ -31,9 +31,27 @@ public class StudentController {
         return studentDAO.findAll();
     }
 
-    @GetMapping("/{StudentID}")
-    public Optional<StudentModel> getStudentById(@PathVariable("StudentID") int StudentID){
-        return studentDAO.findById(StudentID);
+    @GetMapping("/{studentID}")
+    public Optional<StudentModel> getStudentById(@PathVariable("studentID") int studentID){
+        return studentDAO.findById(studentID);
+    }
+    @GetMapping("/findByName/{studentName}")
+    public Optional<StudentModel> findByStudentName(@PathVariable("studentName") String studentName){
+        return studentDAO.findByStudentName(studentName);
+    }
+    @DeleteMapping("/deleteAll")
+    public void deleteAllStudents(){
+         studentDAO.deleteAll();
+    }
+
+    @GetMapping("/findByNameAndID/{studentName},{studentId}")
+    public Optional<StudentModel> findByStudentNameAndStudentId(@PathVariable("studentName") String studentName,@PathVariable("studentId") int studentId){
+        return studentDAO.findByStudentNameAndStudentId(studentName,studentId);
+    }
+
+    @GetMapping("/findByNameAndOrderByID/{studentName}")
+    public Optional<StudentModel> findByStudentNameOrderByStudentIdDesc(@PathVariable("studentName") String studentName){
+        return studentDAO.findByStudentNameOrderByStudentIdDesc(studentName);
     }
 
 }
