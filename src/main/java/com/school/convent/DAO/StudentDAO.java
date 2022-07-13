@@ -4,6 +4,7 @@ import com.school.convent.Model.StudentModel;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -20,6 +21,8 @@ public interface StudentDAO extends CrudRepository<StudentModel,Integer> {
     Optional<StudentModel> findByStudentNameOrderByStudentIdDesc(String studentName);
 
     Optional<StudentModel> fetchStudentWithName(String studentName);
+
+    public Iterable<StudentModel> findListStudents(StudentModel studentName);
 
 
 }

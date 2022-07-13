@@ -7,6 +7,7 @@ import com.school.convent.Model.StudentModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -34,6 +35,9 @@ public class StudentService {
         return studentDAO.findByStudentNameAndStudentId(studentName,studentId);
     }
 
+    public Iterable<StudentModel> findListStudents(StudentModel studentModel){
+        return studentDAO.findListStudents(studentModel);
+    }
 
     public Optional<StudentModel> findByStudentNameOrderByStudentIdDesc(String studentName){
         System.out.print(studentName);

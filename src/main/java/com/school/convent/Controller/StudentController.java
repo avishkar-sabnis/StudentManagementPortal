@@ -9,6 +9,7 @@ import com.school.convent.Service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -30,6 +31,12 @@ public class StudentController {
     public StudentModel createStudent(@RequestBody StudentModel studentModel){
         return studentService.createStudent(studentModel);
     }
+
+    @GetMapping("/studentList")
+    public Iterable<StudentModel> findListStudents(StudentModel studentModel){
+        return studentService.findListStudents(studentModel);
+    }
+
 
     @GetMapping("/studentDetails")
     public Iterable<StudentModel> getStudentDetails(StudentModel studentModel){

@@ -10,8 +10,13 @@ import java.util.Date;
 @NamedQueries(value =
         {
                 @NamedQuery(name = "StudentModel.fetchStudentWithName",
-                        query = "SELECT P from StudentModel P where P.studentName=?1")
+                        query = "SELECT P from StudentModel P where P.studentName=?1"),
+
+          @NamedQuery(name = "StudentModel.findListStudents",
+                        query = "SELECT E.studentName,E.studentId FROM StudentModel E")
+
         })
+
 
 public class StudentModel {
 
