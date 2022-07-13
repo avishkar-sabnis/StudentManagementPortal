@@ -18,4 +18,8 @@ public interface StudentDAO extends CrudRepository<StudentModel,Integer> {
     Optional<StudentModel> findByStudentNameAndStudentId(String studentName, int studentId);
 
     Optional<StudentModel> findByStudentNameOrderByStudentIdDesc(String studentName);
+
+    Optional<StudentModel> fetchStudentWithName(String studentName);
+
+
 }

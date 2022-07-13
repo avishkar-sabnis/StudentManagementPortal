@@ -7,9 +7,16 @@ import java.util.Date;
 
 @Entity
 @Table(name = "schoolManagement")
-public class StudentModel {
-    @Id
+@NamedQueries(value =
+        {
+                @NamedQuery(name = "StudentModel.fetchStudentWithName",
+                        query = "SELECT P from StudentModel P where P.studentName=?1")
+        })
 
+public class StudentModel {
+
+
+    @Id
     int studentId;
     @Column(name = "studentName")
     String studentName;
@@ -18,6 +25,7 @@ public class StudentModel {
     Date studentDOB;
     @Column(name = "studentMarks")
     int studentMarks;
+
 
     public StudentModel() {
     }
@@ -70,4 +78,6 @@ public class StudentModel {
     public void setStudentMarks(int studentMarks) {
         this.studentMarks = studentMarks;
     }
+
+
 }

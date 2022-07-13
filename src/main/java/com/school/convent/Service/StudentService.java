@@ -1,6 +1,8 @@
 package com.school.convent.Service;
 
+import com.school.convent.DAO.BookDAO;
 import com.school.convent.DAO.StudentDAO;
+import com.school.convent.Model.BookModel;
 import com.school.convent.Model.StudentModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +17,11 @@ public class StudentService {
     @Autowired
     StudentDAO studentDAO;
 
+    @Autowired
+    BookDAO bookDAO;
+
+
+
     public StudentModel createStudent(StudentModel studentModel){
         return studentDAO.save(studentModel);
     }
@@ -27,9 +34,16 @@ public class StudentService {
         return studentDAO.findByStudentNameAndStudentId(studentName,studentId);
     }
 
+
     public Optional<StudentModel> findByStudentNameOrderByStudentIdDesc(String studentName){
         System.out.print(studentName);
         return studentDAO.findByStudentNameOrderByStudentIdDesc(studentName);
+
+    }
+
+    public Optional<StudentModel> fetchStudentWithName(String studentName){
+        System.out.print(studentName);
+        return studentDAO.fetchStudentWithName(studentName);
 
     }
 
@@ -37,4 +51,19 @@ public class StudentService {
     public void deleteById(){
         studentDAO.deleteAll();
     }
+
+
+    //ManyToMany
+
+    public BookModel findByBookName(String bookName){
+        return bookDAO.findByBookName(bookName);
+    }
+    public BookModel saveAllBooks(BookModel bookModel){
+        return bookDAO.save(bookModel);
+    }
+
+    public Iterable<BookModel> getAllBooks(){
+        return bookDAO.findAll();
+    }
+
 }
