@@ -1,0 +1,109 @@
+{
+	"info": {
+		"_postman_id": "a6626b7c-ea38-47d7-a73e-003a9e4d89bb",
+		"name": "StudentSchool",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetStudentDetails",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"studentDOB\": 2022,\r\n    \"studentName\": \"avishkar\",\r\n    \"studentMarks\": 300,\r\n    \"studentId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/school/createStudent",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"school",
+						"createStudent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateStudent",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"studentDOB\": 2022,\r\n    \"studentName\": \"akshay\",\r\n    \"studentMarks\": 300,\r\n    \"studentId\": 2\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9090/school/createStudent",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"school",
+						"createStudent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletall",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/school/deleteAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"school",
+						"deleteAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindByName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/school/findByName/Hemant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"school",
+						"findByName",
+						"Hemant"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
