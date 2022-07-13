@@ -20,6 +20,8 @@ public class StudentModel {
     int studentId;
     @Column(name = "studentName")
     String studentName;
+
+
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd-MM-yyyy")
     @Column(name = "studentDOB")
     Date studentDOB;
