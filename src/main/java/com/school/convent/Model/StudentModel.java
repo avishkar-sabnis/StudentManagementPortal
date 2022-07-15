@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "schoolManagement")
-@NamedQueries(value =
+/*@NamedQueries(value =
         {
                 @NamedQuery(name = "StudentModel.fetchStudentWithName",
                         query = "SELECT P from StudentModel P where P.studentName=?1"),
@@ -15,7 +15,7 @@ import java.util.Date;
           @NamedQuery(name = "StudentModel.findListStudents",
                         query = "SELECT E.studentName,E.studentId FROM StudentModel E")
 
-        })
+        })*/
 
 
 public class StudentModel {

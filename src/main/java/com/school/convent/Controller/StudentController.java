@@ -32,10 +32,10 @@ public class StudentController {
         return studentService.createStudent(studentModel);
     }
 
-    @GetMapping("/studentList")
+  /*  @GetMapping("/studentList")
     public Iterable<StudentModel> findListStudents(StudentModel studentModel){
         return studentService.findListStudents(studentModel);
-    }
+    }*/
 
 
     @GetMapping("/studentDetails")
@@ -47,16 +47,16 @@ public class StudentController {
     public Optional<StudentModel> getStudentById(@PathVariable("studentID") int studentID){
         return studentDAO.findById(studentID);
     }
-    @GetMapping("/findByName/{studentName}")
+   /* @GetMapping("/findByName/{studentName}")
     public Optional<StudentModel> fetchStudentWithName(@PathVariable("studentName") String studentName){
         return studentDAO.fetchStudentWithName(studentName);
-    }
+    }*/
     @DeleteMapping("/deleteAll")
     public void deleteAllStudents(){
          studentDAO.deleteAll();
     }
 
-    @GetMapping("/findByNameAndID/{studentName},{studentId}")
+   /* @GetMapping("/findByNameAndID/{studentName},{studentId}")
     public Optional<StudentModel> findByStudentNameAndStudentId(@PathVariable("studentName") String studentName,@PathVariable("studentId") int studentId){
         return studentDAO.findByStudentNameAndStudentId(studentName,studentId);
     }
@@ -82,6 +82,12 @@ public class StudentController {
         return studentService.findByBookName(bookName);
     }
 
+
+    */
+    @GetMapping("/findByName/{studentName}")
+    public Optional<StudentModel> findfirstName(@PathVariable("studentName") String studentName){
+        return studentService.findfirstName(studentName);
+    }
 
 
 

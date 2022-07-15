@@ -2,12 +2,10 @@ package com.school.convent.Service;
 
 import com.school.convent.DAO.BookDAO;
 import com.school.convent.DAO.StudentDAO;
-import com.school.convent.Model.BookModel;
 import com.school.convent.Model.StudentModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -31,35 +29,39 @@ public class StudentService {
         return studentDAO.findByStudentName(studentName);
     }
 
-    public Optional<StudentModel> findByStudentNameAndStudentId(String studentName,int studentId){
+  /*  public Optional<StudentModel> findByStudentNameAndStudentId(String studentName,int studentId){
         return studentDAO.findByStudentNameAndStudentId(studentName,studentId);
-    }
+    }*/
 
-    public Iterable<StudentModel> findListStudents(StudentModel studentModel){
+   /* public Iterable<StudentModel> findListStudents(StudentModel studentModel){
         return studentDAO.findListStudents(studentModel);
-    }
+    }*/
 
-    public Optional<StudentModel> findByStudentNameOrderByStudentIdDesc(String studentName){
+  /*  public Optional<StudentModel> findByStudentNameOrderByStudentIdDesc(String studentName){
         System.out.print(studentName);
         return studentDAO.findByStudentNameOrderByStudentIdDesc(studentName);
 
-    }
+    }*/
 
-    public Optional<StudentModel> fetchStudentWithName(String studentName){
+ /*   public Optional<StudentModel> fetchStudentWithName(String studentName){
         System.out.print(studentName);
         return studentDAO.fetchStudentWithName(studentName);
 
-    }
+    }*/
 
 
     public void deleteById(){
         studentDAO.deleteAll();
     }
 
+    public Optional<StudentModel> findfirstName(String studentName){
+        return studentDAO.findfirstName(studentName);
+    }
+
 
     //ManyToMany
 
-    public BookModel findByBookName(String bookName){
+  /*  public BookModel findByBookName(String bookName){
         return bookDAO.findByBookName(bookName);
     }
     public BookModel saveAllBooks(BookModel bookModel){
@@ -70,4 +72,6 @@ public class StudentService {
         return bookDAO.findAll();
     }
 
+
+*/
 }
